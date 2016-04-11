@@ -1,0 +1,12 @@
+var js = jQuery.noConflict();
+	js(document).ready(function() {
+		js("#PersonaEstadoId").change(function(){  //se ejecuta con el evento onChange	
+			var monto = js("#PrestamoMonto").val();  //Devuelve el valor del campo Monto
+			var tasa = js("#PersonaEstadoId").val();  //Devuelve el valor del Tasa
+alert('probando funcionamiento');
+			var result = parseFloat(monto) * parseFloat(tasa) / 100;
+			js("#PrestamoIntereses").val(result);
+			}
+		);
+	
+	})

@@ -59,31 +59,11 @@ echo $usuario = $sesion['User']['id'];
          <li><a href="/preescolar/Alumnos_Grados_Secciones/inscribir/"><span>Inscribir</span></a></li>
          <li><a href="/preescolar/alumnos/promover/"><span>Promover Alumno</span></a></li>
          <li><a href="/preescolar/Alumnos_Grados_Secciones/cambiar_seccion_1/"><span>Cambiar Sección</span></a></li>
-         <li><a href="/preescolar/alumnos/retirar/"><span>Constancias especiales</span></a></li>
-         <li><a href="/preescolar/users/edit_1/?"><span>Cambiar usuarios - Grupos</span></a></li>
-         <li><a href="/preescolar/users/edit_1"><span>f</span></a></li>
+         <li><a href="/preescolar/alumnos/retirar/"><span>Retirar Alumnos</span></a></li>
          <li><a href="/preescolar/Eventos/add"><span>Agregar Eventos</span></a></li>
          <li><a href="/preescolar/Noticias/add"><span>Agregar Noticias</span></a></li>
       </ul>
    </li>
-<!--<li class='has-sub'><a href='#'><span>Reportes</span></span></a>
-    <ul><li><a href="#">hola</a>
-            <ul>
-                <li><a href="#">fffff</a></li>
-            </ul>
-        </li>
-         <li><a href="/preescolar/alumnos/bd"><span>Base de datos Grado-Secc</span></a></li>
-         <li><a href="/preescolar/alumnos/dbpdf_rh"><span>BD Alum-Rep-General</span></a></li>
-         <li><a href="/preescolar/AlumnosGradosSecciones/reporte_ubicacion"><span>BD Alum-Rep-Detalle</span></a></li>
-         <li><a href="/preescolar/alumnos/edad_se"><span>Base de datos Edad-Sexo</span></a></li>
-         <li><a href="/preescolar/alumnos/autorizados/"><span>Listado de Autorizados</span></a></li>
-         <li><a href="/preescolar/alumnos/viajes/"><span>Autorizacion de Paseos</span></a></li>
-         <li><a href="/preescolar/alumnos/fotografias"><span>Autorizacion de Fotografias</span></a></li>
-         <li><a href="/preescolar/alumnos/constancias"><span>Constancias</span></a></li>
-         <li><a href="/preescolar/fichas/justificativos_especiales"><span>Constancias especiales</span></a></li>
-         <li><a href="/preescolar/Alumnos/dbpdf_rh"><span>Listado RRHH</span></a></li>
-      </ul>
-   </li>-->
    <li class="has-sub">
 	<a href="#">Reportes</a>
 	<ul>

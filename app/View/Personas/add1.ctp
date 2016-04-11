@@ -58,21 +58,26 @@ else {
                 <table style='width :880px;' >
             <tr>
                 <td>
-                <?php echo $this->Form->input('cedula', array('style'=>'width: 200px; ','maxlength'=>'8', 'value'=>$cedula)); ?>
+                <?php echo $this->Form->input('cedula', array('style'=>'width: 200px; ','onkeypress'=>"return soloNumeros(event)",'maxLength'=>8, 'value'=>$cedula)); ?>
 
                 </td><td>
-		<?php echo $this->Form->input('apellido', array('style'=>'width: 200px; ', 'value'=>$apellido)); ?>
+		<?php echo $this->Form->input('apellido', array('style'=>'width: 200px; ', 'value'=>$apellido,
+                                'onkeypress'=>'return soloLetras(event)', 'onchange'=>'conMayusculas(this)')); ?>
                 </td><td>   
-		<?php echo $this->Form->input('nombre', array('style'=>'width: 200px; ', 'value'=>$nombre)); ?>
+		<?php echo $this->Form->input('nombre', array('style'=>'width: 200px; ', 'value'=>$nombre,
+                                'onkeypress'=>'return soloLetras(event)', 'onchange'=>'conMayusculas(this)')); ?>
                 </td>
            </tr>
           <tr>
                 <td>
-                <?php echo $this->Form->input('telefono_movil', array('style'=>'width: 200px;','type'=>'tel', 'maxlength'=>'12','placeholder'=>'Ejm. 0416-5555555', 'value'=>$tlf_movil)); ?>
+                <?php echo $this->Form->input('telefono_movil', array('style'=>'width: 200px;','type'=>'tel','maxLength'=>12,
+                                'onkeyUp'=>"telefono(this,'-',patron, true)",'placeholder'=>'Ejm. 0416-5555555', 'value'=>$tlf_movil)); ?>
                 </td><td>
-                <?php echo $this->Form->input('telefono_local', array('style'=>'width: 200px;','type'=>'tel','maxlength'=>'12','placeholder'=>'Ejm. 0212-5555555', 'value'=>$tlf_local)); ?>
+                <?php echo $this->Form->input('telefono_local', array('style'=>'width: 200px;','type'=>'tel','maxLength'=>12,
+                                'onkeyUp'=>"telefono(this,'-',patron, true)",'placeholder'=>'Ejm. 0212-5555555', 'value'=>$tlf_local)); ?>
                 </td><td>
-		<?php echo $this->Form->input('telefono_trabajo', array('style'=>'width: 200px;','type'=>'tel','maxlength'=>'12','placeholder'=>'Ejm. 0212-5555555', 'value'=>$tlf_tabajo)); ?>
+		<?php echo $this->Form->input('telefono_trabajo', array('style'=>'width: 200px;','type'=>'tel','maxLength'=>12,
+                                'onkeyUp'=>"telefono(this,'-',patron, true)",'placeholder'=>'Ejm. 0212-5555555', 'value'=>$tlf_tabajo)); ?>
                 </td>
            </tr>
            <tr>
@@ -92,7 +97,7 @@ else {
            </tr>
            <tr>
                 <td>
-                <?php echo $this->Form->input('direccion', array('style'=>'width: 250px;','placeholder'=>'Ejm. Urb. Pedro Perez, Casa 5', 'value'=>$direccion)); ?>
+                <?php echo $this->Form->input('direccion', array('style'=>'width: 250px;','placeholder'=>'Ejm. Urb. Pedro Perez, Casa 5', 'value'=>$direccion, 'onchange'=>'conMayusculas(this)')); ?>
                 </td><td style='vertical-align: super;'>
 		<?php echo $this->Form->input('sexo_id', array('style'=>'width: 200px;', 'value'=>$sex)); ?>
                 </td><td style='vertical-align: super;'>

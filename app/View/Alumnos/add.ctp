@@ -28,32 +28,38 @@ alert('La carga de esta planilla no garantiza el cupo,\ndebera formalizar su ins
             
 		
                 echo "</td><td>";
-                echo $this->Form->input('nombre', array('style'=>'width: 200px;', 'label'=>'Primer Nombre'));
+                echo $this->Form->input('nombre', array('style'=>'width: 200px;', 'label'=>'Primer Nombre',
+                               'onkeypress'=>'return soloLetras(event)', 'onchange'=>'conMayusculas(this)'));
 		//echo $this->Form->input('fecha_nacimiento', array('style'=>'width: 200px;'));
                 echo "</td><td>";
-                echo $this->Form->input('segundo_nombre', array('style'=>'width: 200px;'));
+                echo $this->Form->input('segundo_nombre', array('style'=>'width: 200px;', 
+                               'onkeypress'=>'return soloLetras(event)', 'onchange'=>'conMayusculas(this)'));
 		//echo $this->Form->input('lugar_nacimiento', array('style'=>'width: 200px;'));
                 echo "<td></tr><tr><td>";
-                echo $this->Form->input('apellido', array('style'=>'width: 200px;','label'=>'Primer Apellido'));
+                echo $this->Form->input('apellido', array('style'=>'width: 200px;','label'=>'Primer Apellido', 
+                               'onkeypress'=>'return soloLetras(event)', 'onchange'=>'conMayusculas(this)'));
 		//echo $this->Form->input('fecha_nacimiento', array('style'=>'width: 200px;'));
                 echo "</td><td>";
-                echo $this->Form->input('segundo_apellido', array('style'=>'width: 200px;'));
+                echo $this->Form->input('segundo_apellido', array('style'=>'width: 200px;', 
+                               'onkeypress'=>'return soloLetras(event)', 'onchange'=>'conMayusculas(this)'));
                 echo "</td><td>";
                 echo "<p style='font-size:13px; vertical-align: super;'><font color='red'>*</font> Campos obligatorios</p>";
                 echo "<td></tr><tr><td>";
-                echo $this->Form->input('peso', array('style'=>'width: 200px;','placeholder'=>'Ejm. 5.10'));
+                echo $this->Form->input('peso', array('style'=>'width: 200px;','placeholder'=>'Ejm. 5.10', 'type'=>'text'));
                 echo "</td><td>";
-                echo $this->Form->input('talla', array('style'=>'width: 200px;' ,'placeholder'=>'Ejm. 50.10'));
+                echo $this->Form->input('talla', array('style'=>'width: 200px;' ,'placeholder'=>'Ejm. 50.10', 'type'=>'text'));
                 echo "</td><td>";
                 echo $this->Form->input('sexo_id', array('style'=>'width: 200px;'));
                 echo "<td></tr><tr><td style='vertical-align: super;'>";
 		echo $this->Form->input('fecha_nacimiento', array('formatDate'=>'DMY','minYear'=>Date("Y")-10, 'maxYear'=>Date("Y")-0, 'monthNames'=>
                     array('01'=>'Enero','02'=>'Febrero','03'=>'Marzo','04'=>'Abril','05'=>'Mayo','06'=>'Junio','07'=>'Julio','08'=>'Agosto',
-                        '09'=>'Septiembre','10'=>'Octubre','11'=>'Nobiembre','12'=>'Diciembre')));
+                        '09'=>'Septiembre','10'=>'Octubre','11'=>'Noviembre','12'=>'Diciembre')));
                 echo "</td><td>";
-                echo $this->Form->input('lugar_nacimiento', array('style'=>'width: 250px;', 'label'=>'Lugar de Nacimiento','placeholder'=>'Ejm. Caracas, Distrito Capital'));
+                echo $this->Form->input('lugar_nacimiento', array('style'=>'width: 250px;', 'label'=>'Lugar de Nacimiento','placeholder'=>'Ejm. Caracas, Distrito Capital', 
+                               'onkeypress'=>'return soloLetras(event)', 'onchange'=>'conMayusculas(this)'));
                 echo "</td><td>";
-		echo $this->Form->input('direccion', array('style'=>'width: 250px;' ,'placeholder'=>'Ejm. Urb. Pedro Perez, Casa 5'));
+		echo $this->Form->input('direccion', array('style'=>'width: 250px;' ,'placeholder'=>'Ejm. Urb. Pedro Perez, Casa 5', 
+                                'onchange'=>'conMayusculas(this)'));
 		echo "<td></tr><tr><td><div style='float:left;'>";
 		echo $this->Form->input('estado_id', array('style'=>'width: 200px;'));
                 echo "</div></td><td>";
@@ -67,7 +73,8 @@ alert('La carga de esta planilla no garantiza el cupo,\ndebera formalizar su ins
                 echo "<td></tr><tr><td>";
                 echo $this->Form->input('Persona', array('style'=>'width: 200px;', 'label'=>'Representante', /*'multiple'=>'checkbox',*/ 'required'));
                 echo "</td><td style='vertical-align: super;'>";
-                echo $this->Form->input('telefono_habitacion', array('style'=>'width: 200px;' ,'maxlength'=>'12', 'label'=>'Teléfono de Habitación','placeholder'=>'Ejm. 0212-5555555'));
+                echo $this->Form->input('telefono_habitacion', array('style'=>'width: 200px;', 'maxLength'=>12,
+                                'onkeyUp'=>"telefono(this,'-',patron, true)", 'label'=>'Teléfono de Habitación','placeholder'=>'Ejm. 0212-5555555'));
                 echo "</td><td style='vertical-align: super;'>";
 		echo $this->Form->input('niños_en_el_parto', array('style'=>'width: 200px;', 'required','options'=>array('1'=>'1','2'=>'2','3'=>'3','4'=>'4','5'=>'5'), 'empty'=>'Seleccione', 'label'=>'Niños en el parto'));
                 echo "<td></tr><tr><td>";

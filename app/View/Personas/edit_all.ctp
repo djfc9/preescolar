@@ -6,12 +6,14 @@
 
                  <table style='width :880px;' >
                      <tr><td>
-		<?php echo $this->Form->input('nombre', array('style'=>'width: 130px;'));?>
+		<?php echo $this->Form->input('nombre', array('style'=>'width: 130px;',
+                                'onkeypress'=>'return soloLetras(event)', 'onchange'=>'conMayusculas(this)'));?>
                 </td><td>
-                <?php echo $this->Form->input('apellido', array('style'=>'width: 130px;')); ?>
+                <?php echo $this->Form->input('apellido', array('style'=>'width: 130px;',
+                                'onkeypress'=>'return soloLetras(event)', 'onchange'=>'conMayusculas(this)')); ?>
                 </td><td>
-               <?php  echo $this->Form->input('cedula', array('style'=>'width: 130px;'));?>
-                </td><td width='35' rowspan='3'>
+               <?php  echo $this->Form->input('cedula', array('style'=>'width: 130px;', 'disabled'=>true,'onkeypress'=>"return soloNumeros(event)",'maxLength'=>8));?>
+             </td><td width='35' rowspan='3'>
              <div class="flotando1">
                  
                <?php  if(!empty($persona['0']['Persona']['foto']))
@@ -27,11 +29,14 @@
              </div>
                      </tr><tr>
                      <td>
-                 <?php echo$this->Form->input('telefono_movil', array('style'=>'width: 130px;', 'maxlengt'=>'11')); ?>
+                 <?php echo$this->Form->input('telefono_movil', array('style'=>'width: 130px;','maxLength'=>12,
+                                'onkeyUp'=>"telefono(this,'-',patron, true)")); ?>
                 </td><td>
-                <?php echo $this->Form->input('telefono_local', array('style'=>'width: 130px;', 'maxlengt'=>'11')); ?>
+                <?php echo $this->Form->input('telefono_local', array('style'=>'width: 130px;','maxLength'=>12,
+                                'onkeyUp'=>"telefono(this,'-',patron, true)")); ?>
                 </td><td>
-                <?php echo $this->Form->input('telefono_trabajo', array('style'=>'width: 130px;', 'maxlengt'=>'11')); ?>
+                <?php echo $this->Form->input('telefono_trabajo', array('style'=>'width: 130px;','maxLength'=>12,
+                                'onkeyUp'=>"telefono(this,'-',patron, true)")); ?>
                 </td></tr>
                      <tr>
                          <td style='vertical-align: super;'>
@@ -39,7 +44,8 @@
                 </td><td style='vertical-align: super;'>
 		<?php echo $this->Form->input('TipoPersona', array('type'=>'select','label'=>'Parentesco')); ?>
                 </td><td colspan='4'>
-		<?php echo $this->Form->input('direccion', array('style'=>'width: 385px;')); ?>
+		<?php echo $this->Form->input('direccion', array('style'=>'width: 385px;',
+                                 'onchange'=>'conMayusculas(this)')); ?>
 		</td></tr>
                      <tr><td><div>
 		<?php echo $this->Form->input('estado_id', array('style'=>'width: 130px;')); ?>

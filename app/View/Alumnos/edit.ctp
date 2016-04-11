@@ -8,33 +8,39 @@
                 <?php echo $this->Form->input('id'); ?>
                 <?php echo $this->Form->input('cedula_escolar', array('style'=>'width: 150px;','disabled'=> true)); ?>
                 </td><td>
-                <?php echo $this->Form->input('nombre', array('style'=>'width: 150px;')); ?>
+                <?php echo $this->Form->input('nombre', array('style'=>'width: 150px;', 
+                               'onkeypress'=>'return soloLetras(event)', 'onchange'=>'conMayusculas(this)')); ?>
                 </td><td>
-                <?php echo $this->Form->input('apellido', array('style'=>'width: 150px;')); ?>
+                <?php echo $this->Form->input('apellido', array('style'=>'width: 150px;', 
+                               'onkeypress'=>'return soloLetras(event)', 'onchange'=>'conMayusculas(this)')); ?>
                 </td><td width='35' rowspan='3'>
                 <div class="flotando1">
                 <?php   echo $this->Html->image("./alumno/foto/" . $alumno['0']['Alumno']['foto'], array('class'=>'foto_ficha')); ?> 
                 </div>
                 </td>
                 </tr><tr><td>
-                <?php echo $this->Form->input('segundo_nombre', array('style'=>'width: 150px;')); ?>
+                <?php echo $this->Form->input('segundo_nombre', array('style'=>'width: 150px;', 
+                               'onkeypress'=>'return soloLetras(event)', 'onchange'=>'conMayusculas(this)')); ?>
                 </td><td>
-                <?php echo $this->Form->input('segundo_apellido', array('style'=>'width: 150px;')); ?>
+                <?php echo $this->Form->input('segundo_apellido', array('style'=>'width: 150px;', 
+                               'onkeypress'=>'return soloLetras(event)', 'onchange'=>'conMayusculas(this)')); ?>
                 </td><td>
                     <p style='font-size:13px; vertical-align: super;'><font color='red'>*</font> Campos obligatorios</p>
                     </td>
                 </tr><tr><td>
-                <?php echo $this->Form->input('peso', array('style'=>'width: 150px;')); ?>
+                <?php echo $this->Form->input('peso', array('style'=>'width: 150px;', 'type'=>'text')); ?>
                 </td><td>
-                <?php echo $this->Form->input('talla', array('style'=>'width: 150px;')); ?>
+                <?php echo $this->Form->input('talla', array('style'=>'width: 150px;', 'type'=>'text')); ?>
                 </td><td>
                 <?php echo $this->Form->input('sexo_id', array('style'=>'width: 150px;')); ?>
                 </td></tr><tr><td style="vertical-align: super;">
                 <?php echo $this->Form->input('fecha_nacimiento'); ?>
                 </td><td>
-                <?php echo $this->Form->input('lugar_nacimiento', array('style'=>'width: 220px;')); ?>
+                <?php echo $this->Form->input('lugar_nacimiento', array('style'=>'width: 220px;', 
+                               'onkeypress'=>'return soloLetras(event)', 'onchange'=>'conMayusculas(this)')); ?>
                 </td><td style="vertical-align: super;">
-		<?php echo $this->Form->input('telefono_habitacion', array('style'=>'width: 150px;')); ?>
+		<?php echo $this->Form->input('telefono_habitacion', array('style'=>'width: 150px;','maxLength'=>12,
+                                'onkeyUp'=>"telefono(this,'-',patron, true)")); ?>
                 </td></tr><tr><td>
                 <div style="float: left;">
                 <?php echo $this->Form->input('estado_id', array('style'=>'width: 150px;')); ?>
@@ -48,7 +54,8 @@
 		<?php echo $this->Form->input('parroquia_id', array('style'=>'width: 150px;', 'empty'=>'Seleccione')); ?>
                 </div>
 		</td></tr><tr><td>
-                <?php echo $this->Form->input('direccion', array('style'=>'width: 220px;')); ?>
+                <?php echo $this->Form->input('direccion', array('style'=>'width: 220px;', 
+                                'onchange'=>'conMayusculas(this)')); ?>
                 </td><td colspan="2" style="vertical-align: super;">
                 <?php echo $this->Form->input('foto', array('type'=>'file')); ?>
                 </td></tr><tr><td colspan='2' class="flotados2">

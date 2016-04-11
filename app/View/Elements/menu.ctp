@@ -44,14 +44,14 @@ echo $usuario = $sesion['User']['id'];
         <li><a href="/preescolar/Alumnos/inscritos"><span>Alumnos Inscritos</span></a></li>
       </ul>
     </li>
- <li class='has-sub'><a href='#'><span>Adminstraci&oacute;n</span></span></a>
+<li class='has-sub'><a href='#'><span>Adminstraci&oacute;n</span></span></a>
       <ul>
           <li><a href="/preescolar/personas/asignacion/"><span>Asignar Grados y Secciones</span></a></li>
          <li><a href="/preescolar/GradosSeccionesPersonas/index/"><span>Secciones Asignadas</span></a></li>
          <li><a href="/preescolar/Alumnos_Grados_Secciones/inscribir/"><span>Inscribir</span></a></li>
          <li><a href="/preescolar/alumnos/promover/"><span>Promover Alumno</span></a></li>
          <li><a href="/preescolar/Alumnos_Grados_Secciones/cambiar_seccion_1/"><span>Cambiar Sección</span></a></li>
-         <li><a href="/preescolar/users/edit_1/?"><span>Cambiar usuarios - Grupos</span></a></li>
+         <li><a href="/preescolar/alumnos/retirar/"><span>Retirar Alumnos</span></a></li>
          <li><a href="/preescolar/Eventos/add"><span>Agregar Eventos</span></a></li>
          <li><a href="/preescolar/Noticias/add"><span>Agregar Noticias</span></a></li>
       </ul>

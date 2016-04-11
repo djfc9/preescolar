@@ -131,19 +131,24 @@
      
 	<?php
         //echo debug($persona);
-		echo $this->Form->input('Persona.nombre', array('style'=>'width: 150px;', 'value'=> $nuc_nombre));
+		echo $this->Form->input('Persona.nombre', array('style'=>'width: 150px;', 'value'=> $nuc_nombre,
+                                'onkeypress'=>'return soloLetras(event)', 'onchange'=>'conMayusculas(this)'));
                 echo "</td><td>";
-                echo $this->Form->input('Persona.apellido', array('style'=>'width: 150px;', 'value'=> $nuc_apellido));
+                echo $this->Form->input('Persona.apellido', array('style'=>'width: 150px;', 'value'=> $nuc_apellido,
+                                'onkeypress'=>'return soloLetras(event)', 'onchange'=>'conMayusculas(this)'));
 		//echo $this->Form->input('fecha_nacimiento', array('style'=>'width: 150px;'));
                 echo "</td><td>";
-                echo $this->Form->input('Persona.cedula', array('maxlength'=>'8','style'=>'width: 150px;', 'value'=> $nuc_ci));
+                echo $this->Form->input('Persona.cedula', array('onkeypress'=>"return soloNumeros(event)",'maxLength'=>8, 'style'=>'width: 150px;', 'value'=> $nuc_ci));
 		//echo $this->Form->input('lugar_nacimiento', array('style'=>'width: 150px;'));
                 echo "</td><td>";
-                 echo $this->Form->input('Persona.telefono_movil', array('maxlength'=>'12','style'=>'width: 150px;','placeholder'=>'Ejm. 0416-5555555', 'value'=> $nuc_movil));
+                 echo $this->Form->input('Persona.telefono_movil', array('maxLength'=>12,
+                                'onkeyUp'=>"telefono(this,'-',patron, true)", 'style'=>'width: 150px;','placeholder'=>'Ejm. 0416-5555555', 'value'=> $nuc_movil));
                 echo "</tr><tr><td>";
-                echo $this->Form->input('Persona.telefono_local', array('maxlength'=>'12','style'=>'width: 150px;','placeholder'=>'Ejm. 0212-5555555', 'value'=> $nuc_local));
+                echo $this->Form->input('Persona.telefono_local', array('maxLength'=>12,
+                                'onkeyUp'=>"telefono(this,'-',patron, true)", 'style'=>'width: 150px;','placeholder'=>'Ejm. 0212-5555555', 'value'=> $nuc_local));
                 echo "</td><td>";
-                echo $this->Form->input('Persona.telefono_trabajo', array('maxlength'=>'12','style'=>'width: 150px;' ,'placeholder'=>'Ejm. 0212-5555555', 'value'=> $nuc_trabajo));
+                echo $this->Form->input('Persona.telefono_trabajo', array('maxLength'=>12,
+                                'onkeyUp'=>"telefono(this,'-',patron, true)",'style'=>'width: 150px;' ,'placeholder'=>'Ejm. 0212-5555555', 'value'=> $nuc_trabajo));
                 echo "</td><td>";
 		echo $this->Form->input('TipoPersona.PersonaTipoPersona', array('style'=>'width: 150px;','label'=>'Parentesco','type'=>'select', 'options'=>array('1'=>'Padre')));
                 echo "</td><td>";
@@ -258,19 +263,24 @@
      
 	<?php
         //echo debug($persona);
-		echo $this->Form->input('Persona.nombre', array('style'=>'width: 150px;', 'value'=> $nuc_nombre));
+		echo $this->Form->input('Persona.nombre', array('style'=>'width: 150px;', 'value'=> $nuc_nombre,
+                                'onkeypress'=>'return soloLetras(event)', 'onchange'=>'conMayusculas(this)'));
                 echo "</td><td>";
-                echo $this->Form->input('Persona.apellido', array('style'=>'width: 150px;', 'value'=> $nuc_apellido));
+                echo $this->Form->input('Persona.apellido', array('style'=>'width: 150px;', 'value'=> $nuc_apellido,
+                                'onkeypress'=>'return soloLetras(event)', 'onchange'=>'conMayusculas(this)'));
 		//echo $this->Form->input('fecha_nacimiento', array('style'=>'width: 150px;'));
                 echo "</td><td>";
-                echo $this->Form->input('Persona.cedula', array('style'=>'width: 150px;', 'value'=> $nuc_ci, 'maxlength'=>'8'));
+                echo $this->Form->input('Persona.cedula', array('style'=>'width: 150px;', 'value'=> $nuc_ci, 'onkeypress'=>"return soloNumeros(event)",'maxLength'=>8,));
 		//echo $this->Form->input('lugar_nacimiento', array('style'=>'width: 150px;'));
                 echo "</td><td>";
-                 echo $this->Form->input('Persona.telefono_movil', array('style'=>'width: 150px;','placeholder'=>'Ejm. 0416-5555555', 'maxlengt'=>'12', 'value'=> $nuc_movil));
+                 echo $this->Form->input('Persona.telefono_movil', array('maxLength'=>12,
+                                'onkeyUp'=>"telefono(this,'-',patron, true)", 'style'=>'width: 150px;','placeholder'=>'Ejm. 0416-5555555', 'maxlengt'=>'12', 'value'=> $nuc_movil));
                 echo "</tr><tr><td>";
-                echo $this->Form->input('Persona.telefono_local', array('style'=>'width: 150px;','placeholder'=>'Ejm. 0212-5555555', 'maxlengt'=>'12', 'value'=> $nuc_local));
+                echo $this->Form->input('Persona.telefono_local', array('maxLength'=>12,
+                                'onkeyUp'=>"telefono(this,'-',patron, true)", 'style'=>'width: 150px;','placeholder'=>'Ejm. 0212-5555555', 'maxlengt'=>'12', 'value'=> $nuc_local));
                 echo "</td><td>";
-                echo $this->Form->input('Persona.telefono_trabajo', array('style'=>'width: 150px;','placeholder'=>'Ejm. 0212-5555555', 'maxlengt'=>'12' , 'value'=> $nuc_trabajo));
+                echo $this->Form->input('Persona.telefono_trabajo', array('maxLength'=>12,
+                                'onkeyUp'=>"telefono(this,'-',patron, true)", 'style'=>'width: 150px;','placeholder'=>'Ejm. 0212-5555555', 'maxlengt'=>'12' , 'value'=> $nuc_trabajo));
                 echo "</td><td>";
 		echo $this->Form->input('TipoPersona.PersonaTipoPersona', array('style'=>'width: 150px;','type'=>'select', 'options'=>array('1'=>'Madre'), 'label'=>'Parentesco'));
                 echo "</td><td>";

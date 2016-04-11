@@ -4,7 +4,7 @@
 <div id='buscador_caja'>
 <div class="flotados5">
     <?php
-        echo $this->Form->input('AlumnoCedulaEscolar', array('style'=>'width: 150px;', 'label'=>'Cedula Escolar','placeholder'=>'Ejm. 11209568332'));
+        echo $this->Form->input('AlumnoCedulaEscolar', array('onkeypress'=>"return soloNumeros(event)",'maxLength'=>11,'style'=>'width: 150px;', 'label'=>'Cedula Escolar','placeholder'=>'Ejm. 11209568332'));
         echo "</div><div class='flotados3'>";
         echo $this->Html->image('consultar.png', array('class'=>'flotados3', 'width'=>'40px;', 'heigth'=>'40px;', 'id'=>'busqueda_lista', 'title'=>'Consultar'));
         echo $this->Html->image('pdf.png', array('class'=>'flotados3', 'width'=>'40px;', 'heigth'=>'40px;', 'title'=>'Imprimir', 'url'=>array('action'=>'lista_preinscritos')));

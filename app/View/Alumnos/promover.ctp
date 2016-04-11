@@ -32,7 +32,7 @@ $ano_escolar=$ano1."-".$ano2;
 }
         
         echo "<div style='float: left'>";
-        echo $this->Form->input('Alumno.cedula_escolar', array('style'=>'width: 150px;' ,'placeholder'=>'Ejm. 11209568332', 'autofocus'));
+        echo $this->Form->input('Alumno.cedula_escolar', array('onkeypress'=>"return soloNumeros(event)",'maxLength'=>11,'style'=>'width: 150px;' ,'placeholder'=>'Ejm. 11209568332', 'autofocus'));
         echo "</div><div class='flotados3'>";
         echo $this->Html->image('consultar.png', array('class'=>'flotados3', 'width'=>'40px;', 'heigth'=>'40px;', 'id'=>'img_busqueda_pro'));
         echo "</div><div id='contenido2'>";
